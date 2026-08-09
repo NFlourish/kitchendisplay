@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Web</title>
+    <link rel="stylesheet" href="kitchen.css">
+</head>
+<body>
+    <!-- <table class="tab">
+        <tr class="row1">
+            <th>TableID</th>
+            <th>Order</th>
+            <th>Order Status</th>
+            <th>Special Note</th>
+        </tr>
+
+        <tr>
+            <td>table1</td>
+            <td><button>burger</button></td>
+            <td>Preparing</td>
+            <td>Not spicy</td>
+        </tr>
+
+        <tr>
+            <td>table2</td>
+            <td><button>pizza</button></td>
+            <td>Pending</td>
+            <td>Very spicy</td>
+        </tr>
+    </table> -->
+
+
+
+
+
+<!-- <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #0f0f0f;
+    color: #fff;
+    padding: 24px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #2a2a2a;
+  }
+  .header h1 { font-size: 28px; font-weight: 700; color: #fff; }
+  .stats { display: flex; gap: 16px; font-size: 14px; }
+  .stats span {
+    background: #1a1a1a;
+    padding: 6px 16px;
+    border-radius: 24px;
+    font-weight: 500;
+  }
+  .stats .pending { color: #fbbf24; }
+  .stats .progress { color: #22c55e; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    background: #1a1a1a;
+    border-radius: 16px;
+    padding: 20px;
+    border-left: 5px solid #fbbf24;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    transition: transform 0.1s;
+  }
+  .card.priority { border-left-color: #ef4444; }
+  .card.cooking { border-left-color: #3b82f6; }
+  .card.done { opacity: 0.5; border-left-color: #22c55e; }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .table { font-size: 22px; font-weight: 700; color: #fbbf24; }
+  .time { font-size: 13px; color: #888; }
+  .items { list-style: none; margin: 12px 0 16px; }
+  .items li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #2a2a2a;
+    font-size: 15px;
+  }
+  .items li:last-child { border-bottom: none; }
+  .qty { color: #888; margin-right: 8px; }
+  .notes {
+    font-size: 12px;
+    color: #fbbf24;
+    margin-left: 20px;
+    font-weight: 400;
+  }
+  .instructions {
+    background: #2a2a2a;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #fbbf24;
+    margin: 8px 0 14px;
+    border-left: 3px solid #fbbf24;
+  }
+  .actions { display: flex; gap: 10px; }
+  .btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.15s;
+  }
+  .btn-start { background: #2563eb; color: #fff; }
+  .btn-start:hover { background: #1d4ed8; }
+  .btn-done { background: #22c55e; color: #fff; }
+  .btn-done:hover { background: #16a34a; }
+  .btn-hold { background: #4b5563; color: #fff; }
+  .btn-hold:hover { background: #374151; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🍳 Kitchen Display</h1>
+  <div class="stats">
+    <span class="pending">🟡 Pending: 2</span>
+    <span class="progress">🟢 Cooking: 1</span>
+  </div>
+</div>
+
+<div class="grid">
+
+  <!-- Priority Order -->
+  <!-- <div class="card priority">
+    <div class="card-top">
+      <span class="table">Table 7</span>
+      <span class="time">2 min ago</span>
+    </div>
+    <ul class="items">
+      <li><span><span class="qty">2x</span> Grilled Salmon <span class="notes">📝 Medium rare</span></span></li>
+      <li><span><span class="qty">1x</span> Mashed Potatoes <span class="notes">📝 No butter</span></span></li>
+    </ul>
+    <div class="instructions">⚠️ Allergy: dairy-free</div>
+    <div class="actions">
+      <button class="btn btn-start">▶️ Start</button>
+      <button class="btn btn-hold">⏸️ Hold</button>
+    </div>
+  </div>
+
+  <!-- Cooking Order -->
+  <!-- <div class="card cooking">
+    <div class="card-top">
+      <span class="table" style="color:#3b82f6;">Table 12</span>
+      <span class="time">8 min ago</span>
+    </div>
+    <ul class="items">
+      <li><span><span class="qty">1x</span> Margherita Pizza</span></li>
+      <li><span><span class="qty">2x</span> Caesar Salad <span class="notes">📝 Extra croutons</span></span></li>
+    </ul>
+    <div class="actions">
+      <button class="btn btn-done">✅ Done</button>
+    </div>
+  </div> -->
+
+  <!-- Pending Order -->
+  <!-- <div class="card">
+    <div class="card-top">
+      <span class="table">Table 4</span>
+      <span class="time">15 min ago</span>
+    </div>
+    <ul class="items">
+      <li><span><span class="qty">1x</span> Beef Burger <span class="notes">📝 Well done</span></span></li>
+      <li><span><span class="qty">1x</span> Fries</span></li>
+    </ul>
+    <div class="actions">
+      <button class="btn btn-start">▶️ Start</button>
+      <button class="btn btn-hold">⏸️ Hold</button>
+    </div>
+  </div>
+
+</div>  --> 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #f5f7fa;
+    padding: 30px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .header h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #1e293b;
+  }
+  .stats {
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .stats span {
+    background: #ffffff;
+    padding: 6px 18px;
+    border-radius: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    color: #475569;
+  }
+  .stats .pending { color: #b45309; background: #fffbeb; }
+  .stats .cooking { color: #1d4ed8; background: #eff6ff; }
+  .stats .done { color: #15803d; background: #f0fdf4; }
+
+  .table-container {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    overflow: hidden;
+    border: 1px solid #e9edf2;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th {
+    background: #f8fafc;
+    padding: 16px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    border-bottom: 1px solid #e9edf2;
+  }
+  td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #1e293b;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  /* Status rows with soft colors */
+  .row-pending { background: #fffbeb; border-left: 4px solid #f59e0b; }
+  .row-priority { background: #fef2f2; border-left: 4px solid #ef4444; }
+  .row-cooking { background: #eff6ff; border-left: 4px solid #3b82f6; }
+  .row-done { background: #f0fdf4; border-left: 4px solid #22c55e; opacity: 0.7; }
+
+  .table-id {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 16px;
+  }
+  .table-id.priority { color: #dc2626; }
+  .table-id.cooking { color: #2563eb; }
+
+  .order-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .order-items li {
+    padding: 4px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .qty {
+    color: #94a3b8;
+    font-weight: 500;
+    min-width: 24px;
+  }
+
+  /* Description button & tooltip */
+  .desc-btn {
+    background: #e9edf2;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.15s;
+    position: relative;
+  }
+  .desc-btn:hover {
+    background: #cbd5e1;
+    color: #1e293b;
+  }
+
+  .tooltip {
+    display: none;
+    position: absolute;
+    bottom: 140%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: #f1f5f9;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    white-space: nowrap;
+    max-width: 220px;
+    white-space: normal;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 10;
+  }
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #1e293b;
+  }
+  .desc-btn:hover .tooltip {
+    display: block;
+  }
+
+  .special-note {
+    background: #f1f5f9;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #475569;
+    display: inline-block;
+    margin: 2px 4px 2px 0;
+    border: 1px solid #e2e8f0;
+  }
+  .special-note.important {
+    background: #fef3c7;
+    border-color: #f59e0b;
+    color: #92400e;
+  }
+
+  .time {
+    color: #94a3b8;
+    font-size: 13px;
+  }
+
+  .status-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  .status-badge.pending { background: #fef3c7; color: #b45309; }
+  .status-badge.cooking { background: #dbeafe; color: #1d4ed8; }
+  .status-badge.done { background: #dcfce7; color: #15803d; }
+  .status-badge.priority { background: #fee2e2; color: #dc2626; }
+
+  @media (max-width: 768px) {
+    table, thead, tbody, th, td, tr { display: block; }
+    th { display: none; }
+    tr {
+      margin-bottom: 16px;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 16px;
+      border: 1px solid #e9edf2;
+      border-left: 4px solid #f59e0b;
+    }
+    td {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    td:last-child { border-bottom: none; }
+    td:before {
+      content: attr(data-label);
+      font-weight: 500;
+      color: #64748b;
+      font-size: 13px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🍳 Kitchen Display</h1>
+  <div class="stats">
+    <span class="pending">🟡 Pending: 2</span>
+    <span class="cooking">🔵 Cooking: 1</span>
+    <span class="done">🟢 Done: 0</span>
+  </div>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Table ID</th>
+        <th>Order</th>
+        <th>Special Note</th>
+        <th>Time</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody> 
+      
+      <!-- Priority Order -->
+      <tr class="row-priority">
+        <td><span class="table-id priority">T-001</span></td>
+        <td>
+          <ul class="order-items">
+            <li>
+              <span class="qty">2×</span> Grilled Salmon
+              <button class="desc-btn">
+                ℹ️
+                <span class="tooltip">Fresh Atlantic salmon, grilled with lemon herb butter</span>
+              </button>
+            </li>
+            <li>
+              <span class="qty">1×</span> Mashed Potatoes
+              <button class="desc-btn">
+                ℹ️
+                <span class="tooltip">Creamy Yukon gold potatoes with roasted garlic</span>
+              </button>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <span class="special-note important">⚠️ Sugar-free</span>
+          <span class="special-note">Medium size</span>
+          <span class="special-note">No butter</span>
+        </td>
+        <td><span class="time">2 min ago</span></td>
+        <td><span class="status-badge priority">Priority</span></td>
+      </tr>
+
+      <!-- Cooking Order -->
+      <tr class="row-cooking">
+        <td><span class="table-id cooking">T-012</span></td>
+        <td>
+          <ul class="order-items">
+            <li>
+              <span class="qty">1×</span> Margherita Pizza
+              <button class="desc-btn">
+                ℹ️
+                <span class="tooltip">San Marzano tomato, fresh mozzarella, basil, olive oil</span>
+              </button>
+            </li>
+            <li>
+              <span class="qty">2×</span> Caesar Salad
+              <button class="desc-btn">
+                ℹ️
+                <span class="tooltip">Romaine lettuce, parmesan, croutons, house Caesar dressing</span>
+              </button>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <span class="special-note">Extra croutons</span>
+        </td>
+        <td><span class="time">8 min ago</span></td>
+        <td><span class="status-badge cooking">Cooking</span></td>
+      </tr>
+
+      <!-- Pending Order -->
+      <tr class="row-pending">
+        <td><span class="table-id">T-004</span></td>
+        <td>
+          <ul class="order-items">
+            <li>
+              <span class="qty">1×</span> Beef Burger
+              <button class="desc-btn">
+                ℹ️
+                <span class="tooltip">Angus beef patty, cheddar, lettuce, tomato, house sauce</span>
+              </button>
+            </li>
+            <li>
+              <span class="qty">1×</span> Fries
+              <button class="desc-btn">
+                ℹ️
+                <span class="tooltip">Crispy golden fries with sea salt & rosemary</span>
+              </button>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <span class="special-note">Well done</span>
+        </td>
+        <td><span class="time">15 min ago</span></td>
+        <td><span class="status-badge pending">Pending</span></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
+</body>
+</html>
