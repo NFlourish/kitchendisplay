@@ -4,205 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitchen Web</title>
-    <link rel="stylesheet" href="kitchen.css">
 </head>
 <body>
-    <!-- <table class="tab">
-        <tr class="row1">
-            <th>TableID</th>
-            <th>Order</th>
-            <th>Order Status</th>
-            <th>Special Note</th>
-        </tr>
-
-        <tr>
-            <td>table1</td>
-            <td><button>burger</button></td>
-            <td>Preparing</td>
-            <td>Not spicy</td>
-        </tr>
-
-        <tr>
-            <td>table2</td>
-            <td><button>pizza</button></td>
-            <td>Pending</td>
-            <td>Very spicy</td>
-        </tr>
-    </table> -->
-
-
-
-
-
-<!-- <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background: #0f0f0f;
-    color: #fff;
-    padding: 24px;
-  }
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-    padding-bottom: 16px;
-    border-bottom: 2px solid #2a2a2a;
-  }
-  .header h1 { font-size: 28px; font-weight: 700; color: #fff; }
-  .stats { display: flex; gap: 16px; font-size: 14px; }
-  .stats span {
-    background: #1a1a1a;
-    padding: 6px 16px;
-    border-radius: 24px;
-    font-weight: 500;
-  }
-  .stats .pending { color: #fbbf24; }
-  .stats .progress { color: #22c55e; }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 18px;
-  }
-  .card {
-    background: #1a1a1a;
-    border-radius: 16px;
-    padding: 20px;
-    border-left: 5px solid #fbbf24;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    transition: transform 0.1s;
-  }
-  .card.priority { border-left-color: #ef4444; }
-  .card.cooking { border-left-color: #3b82f6; }
-  .card.done { opacity: 0.5; border-left-color: #22c55e; }
-  .card-top {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 12px;
-  }
-  .table { font-size: 22px; font-weight: 700; color: #fbbf24; }
-  .time { font-size: 13px; color: #888; }
-  .items { list-style: none; margin: 12px 0 16px; }
-  .items li {
-    display: flex;
-    justify-content: space-between;
-    padding: 6px 0;
-    border-bottom: 1px solid #2a2a2a;
-    font-size: 15px;
-  }
-  .items li:last-child { border-bottom: none; }
-  .qty { color: #888; margin-right: 8px; }
-  .notes {
-    font-size: 12px;
-    color: #fbbf24;
-    margin-left: 20px;
-    font-weight: 400;
-  }
-  .instructions {
-    background: #2a2a2a;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 13px;
-    color: #fbbf24;
-    margin: 8px 0 14px;
-    border-left: 3px solid #fbbf24;
-  }
-  .actions { display: flex; gap: 10px; }
-  .btn {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 14px;
-    cursor: pointer;
-    transition: 0.15s;
-  }
-  .btn-start { background: #2563eb; color: #fff; }
-  .btn-start:hover { background: #1d4ed8; }
-  .btn-done { background: #22c55e; color: #fff; }
-  .btn-done:hover { background: #16a34a; }
-  .btn-hold { background: #4b5563; color: #fff; }
-  .btn-hold:hover { background: #374151; }
-</style>
-</head>
-<body>
-
-<div class="header">
-  <h1>🍳 Kitchen Display</h1>
-  <div class="stats">
-    <span class="pending">🟡 Pending: 2</span>
-    <span class="progress">🟢 Cooking: 1</span>
-  </div>
-</div>
-
-<div class="grid">
-
-  <!-- Priority Order -->
-  <!-- <div class="card priority">
-    <div class="card-top">
-      <span class="table">Table 7</span>
-      <span class="time">2 min ago</span>
-    </div>
-    <ul class="items">
-      <li><span><span class="qty">2x</span> Grilled Salmon <span class="notes">📝 Medium rare</span></span></li>
-      <li><span><span class="qty">1x</span> Mashed Potatoes <span class="notes">📝 No butter</span></span></li>
-    </ul>
-    <div class="instructions">⚠️ Allergy: dairy-free</div>
-    <div class="actions">
-      <button class="btn btn-start">▶️ Start</button>
-      <button class="btn btn-hold">⏸️ Hold</button>
-    </div>
-  </div>
-
-  <!-- Cooking Order -->
-  <!-- <div class="card cooking">
-    <div class="card-top">
-      <span class="table" style="color:#3b82f6;">Table 12</span>
-      <span class="time">8 min ago</span>
-    </div>
-    <ul class="items">
-      <li><span><span class="qty">1x</span> Margherita Pizza</span></li>
-      <li><span><span class="qty">2x</span> Caesar Salad <span class="notes">📝 Extra croutons</span></span></li>
-    </ul>
-    <div class="actions">
-      <button class="btn btn-done">✅ Done</button>
-    </div>
-  </div> -->
-
-  <!-- Pending Order -->
-  <!-- <div class="card">
-    <div class="card-top">
-      <span class="table">Table 4</span>
-      <span class="time">15 min ago</span>
-    </div>
-    <ul class="items">
-      <li><span><span class="qty">1x</span> Beef Burger <span class="notes">📝 Well done</span></span></li>
-      <li><span><span class="qty">1x</span> Fries</span></li>
-    </ul>
-    <div class="actions">
-      <button class="btn btn-start">▶️ Start</button>
-      <button class="btn btn-hold">⏸️ Hold</button>
-    </div>
-  </div>
-
-</div>  --> 
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -222,18 +25,26 @@
     color: #1e293b;
   }
   .stats {
-    display: flex;
-    gap: 16px;
     font-size: 14px;
     font-weight: 500;
   }
-  .stats span {
-    background: #ffffff;
+  .select {
     padding: 6px 18px;
     border-radius: 24px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-    color: #475569;
+    background: #fef3c7;
+    border: none;
+    color: #92400e;
   }
+
+  .int{
+    border-radius: 15px;
+    border: none;
+    background: #fee2e2;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    padding: 8px;
+  }
+
   .stats .pending { color: #b45309; background: #fffbeb; }
   .stats .cooking { color: #1d4ed8; background: #eff6ff; }
   .stats .done { color: #15803d; background: #f0fdf4; }
@@ -390,6 +201,18 @@
   .status-badge.done { background: #dcfce7; color: #15803d; }
   .status-badge.priority { background: #fee2e2; color: #dc2626; }
 
+  .notificaion{
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #2ecc71;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
   @media (max-width: 768px) {
     table, thead, tbody, th, td, tr { display: block; }
     th { display: none; }
@@ -418,13 +241,17 @@
 </style>
 </head>
 <body>
-
+<div class="notification" id="toast"></div>
 <div class="header">
   <h1>🍳 Kitchen Display</h1>
   <div class="stats">
-    <span class="pending">🟡 Pending: 2</span>
-    <span class="cooking">🔵 Cooking: 1</span>
-    <span class="done">🟢 Done: 0</span>
+    <input type="text" placeholder="Search" class="int">
+    <select class="select" required onchange="updateStatus('ORDER_ID', this.value)">
+      <option disable selected hidden>Filter</option>
+      <option class="pending" value="pending">🟡 Pending: 2</option>
+      <option class="cooking" value="cooking">🔵 Cooking: 1</option>
+      <option class="done" value="done">🟢 Done: 0</option>
+    </select>
   </div>
 </div>
 
@@ -437,6 +264,7 @@
         <th>Special Note</th>
         <th>Time</th>
         <th>Status</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody> 
@@ -469,11 +297,12 @@
         </td>
         <td><span class="time">2 min ago</span></td>
         <td><span class="status-badge priority">Priority</span></td>
+        <td><img src="./images/icons8-delete-32.png"></td>
       </tr>
 
       <!-- Cooking Order -->
       <tr class="row-cooking">
-        <td><span class="table-id cooking">T-012</span></td>
+        <td><span class="table-id cooking">T-002</span></td>
         <td>
           <ul class="order-items">
             <li>
@@ -497,11 +326,12 @@
         </td>
         <td><span class="time">8 min ago</span></td>
         <td><span class="status-badge cooking">Cooking</span></td>
+        <td><img src="./images/icons8-delete-32.png"></td>
       </tr>
 
       <!-- Pending Order -->
       <tr class="row-pending">
-        <td><span class="table-id">T-004</span></td>
+        <td><span class="table-id">T-003</span></td>
         <td>
           <ul class="order-items">
             <li>
@@ -525,14 +355,138 @@
         </td>
         <td><span class="time">15 min ago</span></td>
         <td><span class="status-badge pending">Pending</span></td>
+        <td><img src="./images/icons8-delete-32.png"></td>
+      </tr>
+      
+      <tr class="row-priority">
+        <td><span class="table-id priority">T-001</span></td>
+        <td>
+          <ul class="order-items">
+            <li>
+              <span class="qty">2×</span> Grilled Salmon
+              <button class="desc-btn">
+                ℹ️
+                <span class="tooltip">Fresh Atlantic salmon, grilled with lemon herb butter</span>
+              </button>
+            </li>
+            <li>
+              <span class="qty">1×</span> Mashed Potatoes
+              <button class="desc-btn">
+                ℹ️
+                <span class="tooltip">Creamy Yukon gold potatoes with roasted garlic</span>
+              </button>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <span class="special-note important">⚠️ Sugar-free</span>
+          <span class="special-note">Medium size</span>
+          <span class="special-note">No butter</span>
+        </td>
+        <td><span class="time">2 min ago</span></td>
+        <td><span class="status-badge priority">Done</span></td>
+        <td><img src="./images/icons8-delete-32.png"></td>
       </tr>
 
+
+
+      <tr class="row-priority">
+        <td><span class="table-id priority">T-001</span></td>
+        <td>
+          <ul class="order-items">
+            <li>
+              <span class="qty">2×</span> Grilled Salmon
+              <button class="desc-btn">
+                ℹ️
+                <span class="tooltip">Fresh Atlantic salmon, grilled with lemon herb butter</span>
+              </button>
+            </li>
+            <li>
+              <span class="qty">1×</span> Mashed Potatoes
+              <button class="desc-btn">
+                ℹ️
+                <span class="tooltip">Creamy Yukon gold potatoes with roasted garlic</span>
+              </button>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <span class="special-note important">⚠️ Sugar-free</span>
+          <span class="special-note">Medium size</span>
+          <span class="special-note">No butter</span>
+        </td>
+        <td><span class="time">2 min ago</span></td>
+        <td><span class="status-badge priority">Done</span></td>
+        <td><img src="./images/icons8-delete-32.png"></td>
+      </tr>
+
+
+      <tr class="row-priority">
+        <td><span class="table-id priority">T-001</span></td>
+        <td>
+          <ul class="order-items">
+            <li>
+              <span class="qty">2×</span> Grilled Salmon
+              <button class="desc-btn">
+                ℹ️
+                <span class="tooltip">Fresh Atlantic salmon, grilled with lemon herb butter</span>
+              </button>
+            </li>
+            <li>
+              <span class="qty">1×</span> Mashed Potatoes
+              <button class="desc-btn">
+                ℹ️
+                <span class="tooltip">Creamy Yukon gold potatoes with roasted garlic</span>
+              </button>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <span class="special-note important">⚠️ Sugar-free</span>
+          <span class="special-note">Medium size</span>
+          <span class="special-note">No butter</span>
+        </td>
+        <td><span class="time">2 min ago</span></td>
+        <td><span class="status-badge priority">Priority</span></td>
+        <td><img src="./images/icons8-delete-32.png"></td>
+      </tr>
+
+
+      <tr class="row-priority">
+        <td><span class="table-id priority">T-001</span></td>
+        <td>
+          <ul class="order-items">
+            <li>
+              <span class="qty">2×</span> Grilled Salmon
+              <button class="desc-btn">
+                ℹ️
+                <span class="tooltip">Fresh Atlantic salmon, grilled with lemon herb butter</span>
+              </button>
+            </li>
+            <li>
+              <span class="qty">1×</span> Mashed Potatoes
+              <button class="desc-btn">
+                ℹ️
+                <span class="tooltip">Creamy Yukon gold potatoes with roasted garlic</span>
+              </button>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <span class="special-note important">⚠️ Sugar-free</span>
+          <span class="special-note">Medium size</span>
+          <span class="special-note">No butter</span>
+        </td>
+        <td><span class="time">2 min ago</span></td>
+        <td><span class="status-badge priority">Priority</span></td>
+        <td><img src="./images/icons8-delete-32.png"></td>
+      </tr>
     </tbody>
   </table>
 </div>
 
 
 
-
+<script src="script.js"></script>
 </body>
 </html>
